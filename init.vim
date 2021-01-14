@@ -28,13 +28,14 @@ call plug#begin('~/.vim/plugged')
 	Plug 'easymotion/vim-easymotion'
 	Plug 'scrooloose/nerdtree'
 	Plug 'christoomey/vim-tmux-navigator'
+	Plug 'mattn/emmet-vim'
 
 call plug#end()
 syntax on
 set t_Co=256
 set cursorline
-"colorscheme onehalfdark
-colorscheme gruvbox
+colorscheme onehalfdark
+"colorscheme gruvbox
 let g:airline_theme='onehalfdark'
 " lightline
 " let g:lightline = { 'colorscheme': 'onehalfdark' }onehalf
@@ -45,4 +46,5 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>	
 nmap <Leader>w : w<CR>
 nmap <Leader>q : q<CR>
-
+"emmet key
+let g:user_emmet_leader_key=','
