@@ -60,7 +60,7 @@
 
 "Styles
 	syntax on
-	let g:rainbow_active = 1 "Enable rainbow brackets
+	"let g:rainbow_active = 1 "Enable rainbow brackets
 	set t_Co=256
 	set cursorline
 	colorscheme onehalfdark
