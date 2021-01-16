@@ -1,71 +1,80 @@
-"env variable
-let $INIT = 'C:\Users\marke\AppData\Local\nvim\init.vim'
-"editor
-set nu
-set rnu
-set mouse=a
-set clipboard=unnamed "Habilita el portapapeles del sistema 
+"ENV VARIABLE
+	let $INIT = 'C:\Users\marke\AppData\Local\nvim\init.vim'
+"EDITOR
+	set nu
+	set rnu
+	set mouse=a "Habilita el ratón para desplazarse
+	set clipboard=unnamed "Habilita el portapapeles del sistema 
 
 "............ESTILOS.......................
-set guifont=Consolas
-"let g:deoplete#enable_at_startup = 1
-"let g:jsx_ext_required = 0
+	set guifont=Consolas
+	"let g:deoplete#enable_at_startup = 1
+	"let g:jsx_ext_required = 0
 
-syntax enable "Subrayado de sintaxis
-set numberwidth=1
-set showcmd "muestra los comando que estoy ejecutando
-set ruler "mostrar numero de linea (por defecto en nvim)
-set laststatus=2 "muestra la barra (no esta por defecto en vim)
+	syntax enable "Subrayado de sintaxis
+	set numberwidth=1
+	set showcmd "muestra los comando que estoy ejecutando
+	set ruler "mostrar numero de linea (por defecto en nvim)
+	set laststatus=2 "muestra la barra (no esta por defecto en vim)
+	
+"File and format
+	set nobackup 
+	set noundofile 
+	set encoding=utf-8 
+	set showmatch "para mostrar el parentesis que cierra cuando me situo encima de uno
 
-set nobackup 
-set noundofile 
-set encoding=utf-8 
-set showmatch "para mostrar el parentesis que cierra cuando me situo encima de uno
+" PLUGINS VIM-PLUG
+	call plug#begin('~/.vim/plugged')
+		" Themes
+		Plug 'morhetz/gruvbox'
+		Plug 'sonph/onehalf', { 'rtp': 'vim' }
+		Plug 'itchyny/lightline.vim' "Barra inferior tuneada
 
-call plug#begin('~/.vim/plugged')
-	" Themes
-	Plug 'morhetz/gruvbox'
-	Plug 'sonph/onehalf', { 'rtp': 'vim' }
+		" IDE
+		Plug 'easymotion/vim-easymotion'
+		Plug 'scrooloose/nerdtree'
+		Plug 'christoomey/vim-tmux-navigator'
+		"Plug 'zxqfl/tabnine-vim' " autocompletado (necesario YouCompleteMe)
 
-	" IDE
-	Plug 'easymotion/vim-easymotion'
-	Plug 'scrooloose/nerdtree'
-	Plug 'christoomey/vim-tmux-navigator'
-	Plug 'mattn/emmet-vim'
-	Plug 'preservim/nerdcommenter'
-	"Plug 'zxqfl/tabnine-vim'
-	 Plug 'itchyny/lightline.vim'
+		" Atajos
+		Plug 'mattn/emmet-vim'
+		Plug 'preservim/nerdcommenter'
+	call plug#end()
 
-call plug#end()
+"VUNDLE PLUGINS
+	set nocompatible              " be iMproved, required
+	filetype off                  " required
+	" set the runtime path to include Vundle and initialize
+	set rtp+=~/.vim/bundle/Vundle.vim
 
-"Vundle Plugins
-set nocompatible              " be iMproved, required
-filetype off                  " required
+	call vundle#begin()
+		"Enable Vundle
+		Plugin 'VundleVim/Vundle.vim'
+		
+		"Rainbow brackets
+		Plugin 'frazrepo/vim-rainbow'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-	Plugin 'VundleVim/Vundle.vim'
-	Plugin 'frazrepo/vim-rainbow'
-call vundle#end()            " required
-filetype plugin indent on    " required
+	call vundle#end()            " required
+
+	filetype plugin indent on    " required
 
 "Styles
-syntax on
-set t_Co=256
-set cursorline
-colorscheme onehalfdark
-"colorscheme gruvbox
-let g:airline_theme='onehalfdark'
-" lightline
-" let g:lightline = { 'colorscheme': 'onehalfdark' }onehalf
-"let g:gruvbox_contrast_dark= "hard"
-let NERDTreeQuitOnOpen=1
-let mapleader=" "
-nmap <Leader>s <Plug>(easymotion-s2)
-nmap <Leader>nt :NERDTreeFind<CR>	
-nmap <Leader>w : w<CR>
-nmap <Leader>q : q<CR>
-"emmet key
-let g:user_emmet_leader_key=','
+	syntax on
+	let g:rainbow_active = 1 "Enable rainbow brackets
+	set t_Co=256
+	set cursorline
+	colorscheme onehalfdark
+	"colorscheme gruvbox
+	let g:airline_theme='onehalfdark'
+
+"NERDTree
+	let NERDTreeQuitOnOpen=1
+" Atajos
+	let mapleader=" "
+	nmap <Leader>s <Plug>(easymotion-s2)
+	nmap <Leader>nt :NERDTreeFind<CR>	
+	nmap <Leader>w : w<CR>
+	nmap <Leader>q : q<CR>
+	let g:user_emmet_leader_key=',' "emmet key
+
 filetype plugin on
