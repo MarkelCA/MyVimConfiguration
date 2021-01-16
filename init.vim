@@ -1,3 +1,6 @@
+"env variable
+let $INIT = 'C:\Users\marke\AppData\Local\nvim\init.vim'
+"editor
 set nu
 set rnu
 set mouse=a
@@ -29,8 +32,25 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'christoomey/vim-tmux-navigator'
 	Plug 'mattn/emmet-vim'
+	Plug 'preservim/nerdcommenter'
+	"Plug 'zxqfl/tabnine-vim'
+	 Plug 'itchyny/lightline.vim'
 
 call plug#end()
+
+"Vundle Plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+	Plugin 'VundleVim/Vundle.vim'
+	Plugin 'frazrepo/vim-rainbow'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"Styles
 syntax on
 set t_Co=256
 set cursorline
@@ -48,3 +68,4 @@ nmap <Leader>w : w<CR>
 nmap <Leader>q : q<CR>
 "emmet key
 let g:user_emmet_leader_key=','
+filetype plugin on
