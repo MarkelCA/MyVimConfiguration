@@ -22,6 +22,9 @@
 	set noundofile 
 	set encoding=utf-8 
 	set showmatch "para mostrar el parentesis que cierra cuando me situo encima de uno
+ set tabstop=4
+ set shiftwidth=4
+ set expandtab
 
 " PLUGINS VIM-PLUG
 	call plug#begin('~/.vim/plugged')
