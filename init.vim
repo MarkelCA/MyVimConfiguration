@@ -1,5 +1,5 @@
 "ENV VARIABLE
-	let $INIT = 'C:\Users\marke\AppData\Local\nvim\init.vim'
+	let $INIT = '~\AppData\Local\nvim\init.vim' 
 "EDITOR
 	set nu
 	set rnu
