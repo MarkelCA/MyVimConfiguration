@@ -32,7 +32,8 @@
 		Plug 'morhetz/gruvbox'
 		Plug 'sonph/onehalf', { 'rtp': 'vim' }
 		Plug 'itchyny/lightline.vim' "Barra inferior tuneada
-
+        Plug 'yuezk/vim-js'
+        Plug 'maxmellon/vim-jsx-pretty'
 		" IDE
 		Plug 'easymotion/vim-easymotion'
 		Plug 'scrooloose/nerdtree'
