@@ -54,7 +54,7 @@
 	call vundle#begin()
 		"Enable Vundle
 		Plugin 'VundleVim/Vundle.vim'
-		
+        Plugin 'nelsyeung/twig.vim' "Twig syntax highlight
 		"Rainbow brackets
 		Plugin 'frazrepo/vim-rainbow'
 
