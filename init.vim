@@ -16,6 +16,10 @@
 	set showcmd "muestra los comando que estoy ejecutando
 	set ruler "mostrar numero de linea (por defecto en nvim)
 	set laststatus=2 "muestra la barra (no esta por defecto en vim)
+
+au BufReadPost *.theme set syntax=php " set syntax to php for drupal theme files
+au BufReadPost *.install set syntax=php " set syntax to php for drupal module install files
+au BufReadPost *.module set syntax=php " set syntax to php for drupal module files
 	
 "File and format
 	set nobackup 
@@ -67,8 +71,8 @@
 	"let g:rainbow_active = 1 "Enable rainbow brackets
 	set t_Co=256
 	set cursorline
-	colorscheme onehalfdark
-	"colorscheme gruvbox
+	"colorscheme onehalfdark
+    colorscheme gruvbox
 	let g:airline_theme='onehalfdark'
 
 "NERDTree
