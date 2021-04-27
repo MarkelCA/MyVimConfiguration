@@ -20,6 +20,7 @@ let $INIT = '~/.config/nvim/init.vim'
     set expandtab
 "NERDTree
 	let NERDTreeQuitOnOpen=1
+
 " Atajos
 	let mapleader=" "
 	nmap <Leader>s <Plug>(easymotion-s2)
@@ -27,6 +28,11 @@ let $INIT = '~/.config/nvim/init.vim'
 	nmap <Leader>w : w<CR>
 	nmap <Leader>q : q<CR>
 	let g:user_emmet_leader_key=',' "emmet key
+    nnoremap <S-Right> :tabnext<CR>
+    nnoremap <S-Left> :tabprevious<CR>
+    nnoremap <S-l> :tabnext<CR>
+    nnoremap <S-h> :tabprevious<CR>
+    nnoremap :c :! g++ % && ./a.out<CR>
 
 
 " PLUGINS VIM-PLUG
@@ -45,8 +51,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'easymotion/vim-easymotion'
     Plug 'scrooloose/nerdtree'
     Plug 'christoomey/vim-tmux-navigator'
-
-    " Autocompletion
     " Use release branch (recommend)
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -74,6 +78,10 @@ call vundle#begin()
     Plugin 'nelsyeung/twig.vim' "Twig syntax highlight
     "Rainbow brackets
     Plugin 'frazrepo/vim-rainbow'
+
+    " Autoclose pairs
+    Plugin 'spf13/vim-autoclose'
+
 call vundle#end()            " required
 filetype plugin on
 "............ESTILOS.......................
