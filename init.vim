@@ -27,12 +27,14 @@ let $INIT = '~/.config/nvim/init.vim'
 	nmap <Leader>nt :NERDTreeFind<CR>	
 	nmap <Leader>w : w<CR>
 	nmap <Leader>q : q<CR>
+    ":map <C-K> i<CR><Esc>
 	let g:user_emmet_leader_key=',' "emmet key
     nnoremap <S-Right> :tabnext<CR>
     nnoremap <S-Left> :tabprevious<CR>
     nnoremap <S-l> :tabnext<CR>
     nnoremap <S-h> :tabprevious<CR>
-    nnoremap :c :! g++ % && ./a.out<CR>
+    nnoremap :c :! gcc % && ./a.out<CR>
+    nnoremap :cp :! g++ % && ./a.out<CR>
 
 
 " PLUGINS VIM-PLUG
