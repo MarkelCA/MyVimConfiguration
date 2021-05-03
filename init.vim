@@ -34,8 +34,7 @@ let $INIT = '~/.config/nvim/init.vim'
     nnoremap <S-l> :tabnext<CR>
     nnoremap <S-h> :tabprevious<CR>
     nnoremap :c :! gcc % && ./a.out<CR>
-    nnoremap :cp :! g++ % && ./a.out<CR>
-
+    nnoremap  <S-f> :CocFix<CR>
 
 " PLUGINS VIM-PLUG
 call plug#begin('~/.vim/plugged')
