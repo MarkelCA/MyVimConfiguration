@@ -27,7 +27,13 @@ let $INIT = '~/.config/nvim/init.vim'
 	nmap <Leader>nt :NERDTreeFind<CR>	
 	nmap <Leader>w : w<CR>
 	nmap <Leader>q : q<CR>
-    ":map <C-K> i<CR><Esc>
+    noremap  J 10j
+    noremap  K 10k
+    noremap <S-y> "+y
+    noremap <C-j><C-j> :,+j<CR>
+    "nnoremap <C-j> <C-d>
+    "nnoremap <C-k> <C-u>
+
 	let g:user_emmet_leader_key=',' "emmet key
     nnoremap <S-Right> :tabnext<CR>
     nnoremap <S-Left> :tabprevious<CR>
@@ -35,6 +41,7 @@ let $INIT = '~/.config/nvim/init.vim'
     nnoremap <S-h> :tabprevious<CR>
     nnoremap :c :! gcc % && ./a.out<CR>
     nnoremap  <S-f> :CocFix<CR>
+
 
 " PLUGINS VIM-PLUG
 call plug#begin('~/.vim/plugged')
@@ -134,10 +141,10 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> T :call <SID>show_documentation()<CR>
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> T :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
