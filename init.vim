@@ -27,6 +27,9 @@ let $INIT = '~/.config/nvim/init.vim'
 	nmap <Leader>nt :NERDTreeFind<CR>	
 	nmap <Leader>w : w<CR>
 	nmap <Leader>q : q<CR>
+	nmap <Leader>t zt
+	nmap <Leader>b zb
+	nmap <Leader>m zz
     noremap  J 10j
     noremap  K 10k
     noremap <S-y> "+y
