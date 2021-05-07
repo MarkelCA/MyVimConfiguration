@@ -30,6 +30,7 @@ let $INIT = '~/.config/nvim/init.vim'
 	nmap <Leader>t zt
 	nmap <Leader>b zb
 	nmap <Leader>m zz
+	nmap <Leader>c :!
     noremap  J 10j
     noremap  K 10k
     noremap <S-y> "+y
@@ -43,6 +44,7 @@ let $INIT = '~/.config/nvim/init.vim'
     nnoremap <S-l> :tabnext<CR>
     nnoremap <S-h> :tabprevious<CR>
     nnoremap :c :! gcc % && ./a.out<CR>
+    nnoremap :s :! gcc % && size<CR>
     nnoremap  <S-f> :CocFix<CR>
 
 
