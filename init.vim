@@ -35,6 +35,7 @@ let $INIT = '~/.config/nvim/init.vim'
     noremap  K 10k
     noremap <S-y> "+y
     noremap <C-j><C-j> :,+j<CR>
+    tnoremap <Esc> <C-\><C-n>
     "nnoremap <C-j> <C-d>
     "nnoremap <C-k> <C-u>
 
