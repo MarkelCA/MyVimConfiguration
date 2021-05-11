@@ -44,8 +44,11 @@ let $INIT = '~/.config/nvim/init.vim'
     nnoremap <S-Left> :tabprevious<CR>
     nnoremap <S-l> :tabnext<CR>
     nnoremap <S-h> :tabprevious<CR>
-    nnoremap :c :! gcc % && ./a.out<CR>
-    nnoremap :cp :! g++ % && ./a.out<CR>
+    nnoremap :c :! gcc % && ./a.out<CR> 
+    "compile and run
+    nnoremap :cc :! gcc %<CR>
+    "compile and run
+    nnoremap :ccp :! g++ %<CR>
     nnoremap :s :! gcc % && size<CR>
     nnoremap  <S-f> :CocFix<CR>
 
