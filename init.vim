@@ -50,6 +50,7 @@ let $INIT = '~/.config/nvim/init.vim'
     "compile and run
     nnoremap :ccp :! g++ %<CR>
     nnoremap :s :! gcc % && size<CR>
+    nnoremap :p :! python3 % <CR>
     nnoremap  <S-f> :CocFix<CR>
 
 
@@ -113,8 +114,8 @@ filetype plugin on
 	"let g:rainbow_active = 1 "Enable rainbow brackets
 	set t_Co=256
 	set cursorline
-	"colorscheme onehalfdark
-    colorscheme gruvbox
+    colorscheme onehalfdark
+    "colorscheme gruvbox
     hi Normal guibg=NONE ctermbg=NONE
     au BufReadPost *.theme set syntax=php " set syntax to php for drupal theme files
     au BufReadPost *.install set syntax=php " set syntax to php for drupal module install files
