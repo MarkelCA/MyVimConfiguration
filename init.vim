@@ -33,13 +33,14 @@
     \   'coc-tsserver'
     \]
 
-    let g:blamer_enabled = 1
+    let g:blamer_enabled = 0
     let g:blamer_delay = 0
     let g:blamer_template = '<author>: <committer-time> - <summary>'
     let g:blamer_relative_time = 1
     let g:blamer_show_in_visual_modes = 0
 
-    "COC Gnmap [g <Plug>(coc-git-prevchunk)
+    "COC GIT
+    nmap [g <Plug>(coc-git-prevchunk)
     nmap ]g <Plug>(coc-git-nextchunk)
     " navigate conflicts of current buffer
     nmap [c <Plug>(coc-git-prevconflict)
@@ -155,14 +156,22 @@
 	set laststatus=2 "muestra la barra (no esta por defecto en vim)
 	syntax on
 	"let g:rainbow_active = 1 "Enable rainbow brackets
-	set t_Co=256
 	set cursorline
-    colorscheme onehalfdark
-    "colorscheme onehalflight
+    " Onehalfdark with a fix for the dialogs
+    colorscheme onehalfdark | hi Pmenu ctermfg=78 guibg=236 ctermbg=237
+
+    "colorscheme onehalflight 
+    "hi DiffAdd cterm=bold  ctermbg=15 gui=reverse 
+    "hi DiffDelete cterm=bold  ctermbg=15 gui=reverse 
+    "hi DiffChange cterm=bold  ctermbg=15 gui=reverse 
+
     "colorscheme gruvbox
+    "hi DiffAdd cterm=bold  ctermbg=237 gui=reverse 
+    "hi DiffDelete cterm=bold  ctermbg=237 gui=reverse 
+    "hi DiffChange cterm=bold  ctermbg=237 gui=reverse 
+
+    "Transparent background
     "hi Normal guibg=NONE ctermbg=NONE
-    hi Pmenu ctermfg=78 guibg=236 ctermbg=237
-        "ctermfg=236 ctermbg=188 guifg=#282c34 guibg=#dcdfe4
 
     au BufReadPost *.theme set syntax=php " set syntax to php for drupal theme files
     au BufReadPost *.install set syntax=php " set syntax to php for drupal module install files
