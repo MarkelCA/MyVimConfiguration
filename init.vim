@@ -1,23 +1,44 @@
 "ENV VARIABLE 
-let $INIT = '~/.config/nvim/init.vim' 
+let $INIT = '~/.config/nvim/init.vim'
+
+
+
+let g:coc_global_extensions = [
+\   'coc-json',
+\   'coc-git',
+\   'coc-vimlsp', 
+\   'coc-ccls', 
+\   'coc-clangd', 
+\   'coc-css', 
+\   'coc-phpls', 
+\   'coc-tsserver'
+\]
+
+let g:blamer_enabled = 1
+let g:blamer_delay = 0
+let g:blamer_template = '<author>: <committer-time> - <summary>'
+let g:blamer_relative_time = 1
+let g:blamer_show_in_visual_modes = 0
+
 
 "EDITOR
-	set nu
-	set rnu
-	set mouse=a "Habilita el ratón para desplazarse
-	set clipboard=unnamed "Habilita el portapapeles del sistema 
-    nnoremap # *N
-    nnoremap * *N
-    let g:airline_powerline_fonts = 1
+set nu
+set rnu
+set mouse=a "Habilita el ratón para desplazarse
+set clipboard=unnamed "Habilita el portapapeles del sistema 
+nnoremap # *N
+nnoremap * *N
+let g:airline_powerline_fonts = 1
+let g:airline_theme='deus'
 
 "File and format
-	set nobackup 
-	set noundofile 
-	set encoding=utf-8 
-	set showmatch "para mostrar el parentesis que cierra cuando me situo encima de uno
-    set tabstop=4
-    set shiftwidth=4
-    set expandtab
+set nobackup 
+set noundofile 
+set encoding=utf-8 
+set showmatch "para mostrar el parentesis que cierra cuando me situo encima de uno
+set tabstop=4
+set shiftwidth=4
+set expandtab
 "NERDTree
 	let NERDTreeQuitOnOpen=1
 
@@ -30,28 +51,28 @@ let $INIT = '~/.config/nvim/init.vim'
 	nmap <Leader>t zt
 	nmap <Leader>b zb
 	nmap <Leader>m zz
-	nmap <Leader>c :! 
+	nmap <Leader>c :!  
+    "Open terminal
+
     noremap  J 10j
     noremap  K 10k
     noremap <S-y> "+y
     noremap <C-j><C-j> :,+j<CR>
     tnoremap <Esc> <C-\><C-n>
-    "nnoremap <C-j> <C-d>
-    "nnoremap <C-k> <C-u>
 
 	let g:user_emmet_leader_key=',' "emmet key
     nnoremap <S-Right> :tabnext<CR>
     nnoremap <S-Left> :tabprevious<CR>
     nnoremap <S-l> :tabnext<CR>
     nnoremap <S-h> :tabprevious<CR>
-    nnoremap :c :! gcc % && ./a.out<CR>
+    nnoremap :cc :! gcc % && ./a.out<CR>
     "compile and run
-    nnoremap :cc :! gcc %<CR>
+    nnoremap :ccr :! gcc %<CR>
     "compile and run
-    nnoremap :cp :! g++ % && ./a.out<CR>
-    nnoremap :ccp :! g++ %<CR>
-    nnoremap :s :! gcc % && size<CR>
-    nnoremap :p :! python3 % <CR>
+    nnoremap :ccp :! g++ % && ./a.out<CR>
+    nnoremap :ccpr :! g++ %<CR>
+    "nnoremap :s :! gcc % && size<CR>
+    nnoremap :pp :! python3 % <CR>
     nnoremap  <S-f> :CocFix<CR>
 
 
@@ -64,6 +85,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'yuezk/vim-js'
     Plug 'maxmellon/vim-jsx-pretty'
     " Barra inferior
+    Plug 'APZelos/blamer.nvim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
@@ -115,9 +137,10 @@ filetype plugin on
 	"let g:rainbow_active = 1 "Enable rainbow brackets
 	set t_Co=256
 	set cursorline
-    "colorscheme onehalfdark
-    colorscheme gruvbox
-    hi Normal guibg=NONE ctermbg=NONE
+    colorscheme onehalfdark
+    "colorscheme onehalflight
+    "colorscheme gruvbox
+    "hi Normal guibg=NONE ctermbg=NONE
     au BufReadPost *.theme set syntax=php " set syntax to php for drupal theme files
     au BufReadPost *.install set syntax=php " set syntax to php for drupal module install files
     au BufReadPost *.module set syntax=php " set syntax to php for drupal module files
@@ -177,3 +200,21 @@ nmap <leader>f  <Plug>(coc-format-selected)
 
 " Maps double i to escape
 ":imap ii <Esc>
+"
+
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" navigate conflicts of current buffer
+nmap [c <Plug>(coc-git-prevconflict)
+nmap ]c <Plug>(coc-git-nextconflict)
+" show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
+" show commit contains current position
+nmap gc <Plug>(coc-git-commit)
+" create text object for git chunks
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
+
