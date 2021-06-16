@@ -39,7 +39,11 @@
     let g:blamer_relative_time = 1
     let g:blamer_show_in_visual_modes = 0
 
-    "COC GIT
+    "COC Gnmap [g <Plug>(coc-git-prevchunk)
+    nmap ]g <Plug>(coc-git-nextchunk)
+    " navigate conflicts of current buffer
+    nmap [c <Plug>(coc-git-prevconflict)
+    nmap ]c <Plug>(coc-git-nextconflict)
     " show chunk diff at current position
     nmap gs <Plug>(coc-git-chunkinfo)
     " show commit contains current position
@@ -157,8 +161,8 @@
     "colorscheme onehalflight
     "colorscheme gruvbox
     "hi Normal guibg=NONE ctermbg=NONE
-    hi Pmenu ctermfg=236 guibg=236 ctermbg=237
-    "ctermfg=236 ctermbg=188 guifg=#282c34 guibg=#dcdfe4
+    hi Pmenu ctermfg=78 guibg=236 ctermbg=237
+        "ctermfg=236 ctermbg=188 guifg=#282c34 guibg=#dcdfe4
 
     au BufReadPost *.theme set syntax=php " set syntax to php for drupal theme files
     au BufReadPost *.install set syntax=php " set syntax to php for drupal module install files
