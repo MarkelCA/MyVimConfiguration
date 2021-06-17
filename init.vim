@@ -33,7 +33,7 @@
     \   'coc-tsserver'
     \]
 
-    let g:blamer_enabled = 0
+    let g:blamer_enabled = 1
     let g:blamer_delay = 0
     let g:blamer_template = '<author>: <committer-time> - <summary>'
     let g:blamer_relative_time = 1
