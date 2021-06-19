@@ -71,6 +71,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'easymotion/vim-easymotion'
     Plug 'scrooloose/nerdtree'
     Plug 'christoomey/vim-tmux-navigator'
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'} "Multiple cursors
     " Use release branch (recommend)
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
