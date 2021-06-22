@@ -70,6 +70,7 @@
 	nmap <Leader>b zb
 	nmap <Leader>m zz
 	nmap <Leader>c :!  
+    nmap <Leader>b :BlamerToggle<CR>
     " Maps double i to escape
 ":imap ii <Esc>
     "Open terminal
@@ -85,16 +86,39 @@
     nnoremap <S-Left> :tabprevious<CR>
     nnoremap <S-l> :tabnext<CR>
     nnoremap <S-h> :tabprevious<CR>
-    nnoremap :cc :! gcc % && ./a.out<CR>
-    "compile and run
-    nnoremap :ccr :! gcc %<CR>
-    "compile and run
-    nnoremap :ccp :! g++ % && ./a.out<CR>
-    nnoremap :ccpr :! g++ %<CR>
-    "nnoremap :s :! gcc % && size<CR>
-    nnoremap :pp :! python3 % <CR>
     nnoremap  <S-f> :CocFix<CR>
 
+    " Run any language
+    nnoremap RR :call Run()<CR>
+
+    " Compile any language
+    nnoremap CC :call Compile()<CR>
+
+    function Run()
+        let extension = expand('%:e')
+        if extension == 'c'
+           :execute ":! gcc % && ./a.out" 
+
+        elseif extension == 'cpp'
+           :execute ":! g++ % && ./a.out" 
+
+        elseif extension == 'py'
+           :execute ":! python3 %" 
+
+        elseif extension == 'js'
+           :execute ":! node %" 
+
+        endif
+    endfunction
+
+    function Compile()
+        let extension = expand('%:e')
+        if extension == 'c'
+           :execute ":! gcc %" 
+        elseif extension == 'cpp'
+           :execute ":! g++ %" 
+       endif
+    endfunction
 
 " PLUGINS VIM-PLUG
     call plug#begin('~/.vim/plugged')
@@ -172,7 +196,7 @@
     "hi DiffChange cterm=bold  ctermbg=237 gui=reverse 
 
     "Transparent background
-    "hi Normal guibg=NONE ctermbg=NONE
+    hi Normal guibg=NONE ctermbg=NONE
 
     au BufReadPost *.theme set syntax=php " set syntax to php for drupal theme files
     au BufReadPost *.install set syntax=php " set syntax to php for drupal module install files
