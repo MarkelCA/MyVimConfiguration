@@ -56,7 +56,7 @@
 
 
 "NERDTree
-	"let NERDTreeQuitOnOpen=1
+    let NERDTreeQuitOnOpen=1
 
 " Atajos
     let mapleader=" "
