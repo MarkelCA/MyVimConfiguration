@@ -20,8 +20,7 @@
     set shiftwidth=4
     set expandtab
 
-" IDE
-    " Git Blamer
+" GIT BLAMER
     let g:coc_global_extensions = [
     \   'coc-json',
     \   'coc-git',
@@ -39,7 +38,7 @@
     let g:blamer_relative_time = 1
     let g:blamer_show_in_visual_modes = 0
 
-    "COC GIT
+"COC GIT
     nmap [g <Plug>(coc-git-prevchunk)
     nmap ]g <Plug>(coc-git-nextchunk)
     " navigate conflicts of current buffer
@@ -54,45 +53,57 @@
     xmap ig <Plug>(coc-git-chunk-inner)
     omap ag <Plug>(coc-git-chunk-outer)
     xmap ag <Plug>(coc-git-chunk-outer)
-    "hi DiffAdd ctermbg=109 guifg=#83a598
 
 
 "NERDTree
-	let NERDTreeQuitOnOpen=1
+	"let NERDTreeQuitOnOpen=1
 
 " Atajos
-	let mapleader=" "
+    let mapleader=" "
+	let g:user_emmet_leader_key=',' "emmet key
 	nmap <Leader>s <Plug>(easymotion-s2)
 	nmap <Leader>nt :NERDTreeFind<CR>	
 	nmap <Leader>w : w<CR>
-	nmap <Leader>q : q<CR>
-	nmap <Leader>t zt
-	nmap <Leader>b zb
-	nmap <Leader>m zz
-	nmap <Leader>c :!  
-    nmap <Leader>b :BlamerToggle<CR>
-    " Maps double i to escape
-":imap ii <Esc>
-    "Open terminal
-
+    nmap <Leader>q : q<CR>
     noremap  J 10j
     noremap  K 10k
+
+    " Align top
+	nmap <Leader>t zt
+    " Align bottom
+	nmap <Leader>b zb
+    " Align mid
+	nmap <Leader>m zz
+
+    "Open terminal command
+    nmap C :!  
+
+    "Blamer Toggle
+    nmap <Leader>bt :BlamerToggle<CR>
+
+    " Maps double i to escape
+    ":imap ii <Esc>
+
+    " Copy to system clipboard
     noremap <S-y> "+y
+
+    " Remove endline
     noremap <C-j><C-j> :,+j<CR>
+
+    " Escape from terminal with <Esc>
     tnoremap <Esc> <C-\><C-n>
 
-	let g:user_emmet_leader_key=',' "emmet key
+    " Tab movement
     nnoremap <S-Right> :tabnext<CR>
     nnoremap <S-Left> :tabprevious<CR>
     nnoremap <S-l> :tabnext<CR>
     nnoremap <S-h> :tabprevious<CR>
+
+    " Fix error sugestions
     nnoremap  <S-f> :CocFix<CR>
 
     " Run any language
     nnoremap RR :call Run()<CR>
-
-    " Compile any language
-    nnoremap CC :call Compile()<CR>
 
     function Run()
         let extension = expand('%:e')
@@ -107,9 +118,13 @@
 
         elseif extension == 'js'
            :execute ":! node %" 
-
+        else
+            echomsg "Run(): Error - Application not found for this language."
         endif
     endfunction
+
+    " Compile any language
+    nnoremap CC :call Compile()<CR>
 
     function Compile()
         let extension = expand('%:e')
@@ -117,6 +132,8 @@
            :execute ":! gcc %" 
         elseif extension == 'cpp'
            :execute ":! g++ %" 
+        else
+            echomsg "Compile(): Error - Compiler not found for this language."
        endif
     endfunction
 
@@ -148,7 +165,7 @@
         " Atajos
         Plug 'mattn/emmet-vim'
         Plug 'preservim/nerdcommenter'
-
+        
         " Git
         Plug 'tpope/vim-fugitive'
     call plug#end()
