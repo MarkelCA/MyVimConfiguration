@@ -68,6 +68,10 @@
     noremap  J 10j
     noremap  K 10k
 
+    " Open new tab
+    nmap nt :tabnew<CR>
+    " Open File Search
+	nmap <Leader>f :Files<CR>
     " Align top
 	nmap <Leader>t zt
     " Align bottom
@@ -269,6 +273,6 @@
     nmap <leader>rn <Plug>(coc-rename)
 
     " Formatting selected code.
-    xmap <leader>f  <Plug>(coc-format-selected)
-    nmap <leader>f  <Plug>(coc-format-selected)
+    "xmap <leader>f  <Plug>(coc-format-selected)
+    "nmap <leader>f  <Plug>(coc-format-selected)
 
