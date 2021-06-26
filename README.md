@@ -1,4 +1,4 @@
-# nvim
+# nvim-hero
 I turned neovim into my own IDE. Counts with code autocompletion, language documentation, file manager, git changes info, styles and so on...
 
 ## Plugins Installed:
