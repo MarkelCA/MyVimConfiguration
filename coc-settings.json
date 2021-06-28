@@ -1,3 +1,6 @@
 {
-  "clangd.path": "/home/markel/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
+  "clangd.path": "/home/markel/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+ "intelephense.environment.documentRoot": "/home/user/git/drupal",
+  "intelephense.environment.includePaths": ["/home/user/git/drupal/includes"],
+  "intelephense.files.associations": ["*.php", "*.phtml", "*.module", "*.inc"]
 }
