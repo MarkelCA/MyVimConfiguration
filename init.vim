@@ -22,11 +22,11 @@
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab "sets YAML indent to 2 spaces
 
 " GIT BLAMER
+    "\   'coc-ccls', "C compiler
     let g:coc_global_extensions = [
     \   'coc-json',
     \   'coc-git',
     \   'coc-vimlsp', 
-    \   'coc-ccls', 
     \   'coc-clangd', 
     \   'coc-css', 
     \   'coc-phpls', 
@@ -184,6 +184,7 @@
     call vundle#begin()
         "Enable Vundle
         Plugin 'VundleVim/Vundle.vim'
+        Plugin 'mileszs/ack.vim'
         Plugin 'nelsyeung/twig.vim' "Twig syntax highlight
         "Rainbow brackets
         Plugin 'frazrepo/vim-rainbow'
