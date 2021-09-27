@@ -83,6 +83,9 @@
     "Open terminal command
     nmap C :!  
 
+    " Drupal maps
+    nmap cr :! drush cr<CR>
+
     "Blamer Toggle
     nmap <Leader>bt :BlamerToggle<CR>
 
