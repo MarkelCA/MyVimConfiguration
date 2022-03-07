@@ -31,7 +31,6 @@
     \   'coc-css', 
     \   'coc-phpls', 
     \   'coc-tsserver',
-    \   'coc-graphql'
     \]
 
     let g:blamer_enabled = 1
