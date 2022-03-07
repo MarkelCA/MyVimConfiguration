@@ -30,7 +30,8 @@
     \   'coc-clangd', 
     \   'coc-css', 
     \   'coc-phpls', 
-    \   'coc-tsserver'
+    \   'coc-tsserver',
+    \   'coc-graphql'
     \]
 
     let g:blamer_enabled = 1
@@ -126,6 +127,9 @@
 
         elseif extension == 'js'
            :execute ":! node %" 
+
+        elseif extension == 'hs'
+           :execute ":! runhaskell %" 
         else
             echomsg "Run(): Error - Application not found for this language."
         endif
@@ -165,6 +169,7 @@
         " Use release branch (recommend)
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'mg979/vim-visual-multi', {'branch': 'master'} "Multiple cursors
+        Plug 'jparise/vim-graphql'
 
         " Search files
         Plug 'junegunn/fzf.vim'
