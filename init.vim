@@ -99,7 +99,7 @@
     noremap <C-j><C-j> :,+j<CR>
 
     " Escape from terminal with <Esc>
-    tnoremap <Esc> <C-\><C-n>
+    "tnoremap <Esc> <C-\><C-n>
 
     " Tab movement
     nnoremap <S-Right> :tabnext<CR>
@@ -187,7 +187,7 @@
     filetype off                  " required
     filetype plugin indent on    " required
     " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
+    set rtp+=~/.config/nvim/Vundle.vim
     call vundle#begin()
         "Enable Vundle
         Plugin 'VundleVim/Vundle.vim'
