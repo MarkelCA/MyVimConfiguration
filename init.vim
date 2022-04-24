@@ -31,6 +31,7 @@
     \   'coc-css', 
     \   'coc-phpls', 
     \   'coc-tsserver',
+    \   'coc-solargraph',
     \]
 
     let g:blamer_enabled = 1
