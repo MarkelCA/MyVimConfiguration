@@ -31,6 +31,7 @@
     \   'coc-css', 
     \   'coc-phpls', 
     \   'coc-tsserver',
+    \   'coc-solargraph',
     \]
 
     let g:blamer_enabled = 1
@@ -129,6 +130,8 @@
 
         elseif extension == 'hs'
            :execute ":! runhaskell %" 
+        elseif extension == 'rb'
+           :execute ":! ruby %" 
         else
             echomsg "Run(): Error - Application not found for this language."
         endif
