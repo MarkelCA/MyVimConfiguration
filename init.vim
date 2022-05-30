@@ -76,7 +76,7 @@ let NERDTreeMapOpenInTab='\r'
     noremap  K 10k
 
     " Open new tab
-    nmap cg :tabnew<CR>
+    nmap <Leader>rc :tabnew<CR>
     " Open File Search
 	nmap <Leader>f :Files<CR>
     " Align top
