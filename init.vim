@@ -1,3 +1,8 @@
+noremap t k
+noremap h j
+noremap d h
+noremap n l
+let NERDTreeMapOpenInTab='\r'
 "ENV VARIABLE 
     let $INIT = '~/.config/nvim/init.vim'
 
@@ -71,7 +76,7 @@
     noremap  K 10k
 
     " Open new tab
-    nmap nt :tabnew<CR>
+    nmap cg :tabnew<CR>
     " Open File Search
 	nmap <Leader>f :Files<CR>
     " Align top
