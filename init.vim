@@ -1,45 +1,3 @@
-"nnoremap <silent> T :call <SID>show_documentation()<CR>
-" Use K to show documentation in preview window.
-"nnoremap <silent> T :call <SID>show_documentation()<CR>
-
-" Tab movement
-nnoremap <S-Right> :tabnext<CR>
-nnoremap <S-Left> :tabprevious<CR>
-nnoremap <S-l> :tabnext<CR>
-nnoremap <S-h> :tabprevious<CR>
-" Movement
-noremap  H 10j
-noremap  T 10k
-noremap  U 10j
-noremap  E 10k
-" Insert after 
-noremap r a
-" Replace
-noremap l r
-" Go down
-noremap h j
-" Go down
-noremap h j
-noremap u j
-" Go up
-noremap t k
-noremap e k
-" Go left
-noremap n h
-noremap o h
-    " Prev word
-    noremap m b
-" Go right
-noremap s l
-noremap a l
-" Undo
-noremap , u
-" Delete line
-noremap k e
-" New line
-noremap z o
-
-let NERDTreeMapOpenInTab='\r'
 "ENV VARIABLE 
     let $INIT = '~/.config/nvim/init.vim'
 
@@ -99,6 +57,53 @@ let NERDTreeMapOpenInTab='\r'
     xmap ag <Plug>(coc-git-chunk-outer)
 
 
+" DVORAK Key remap
+    " Documentation
+    nnoremap <silent> D :call <SID>show_documentation()<CR>
+
+    " Tab movement
+    nnoremap <S-Right> :tabnext<CR>
+    nnoremap <S-Left> :tabprevious<CR>
+    nnoremap <S-n> :tabnext<CR>
+    nnoremap <S-s> :tabprevious<CR>
+
+    " Main Movement
+    noremap  H 10j
+    noremap  T 10k
+    noremap  U 10j
+    noremap  E 10k
+    " Go down
+    noremap h j
+    noremap u j
+    " Go up
+    noremap t k
+    noremap e k
+    " Go left
+    noremap n h
+    noremap o h
+
+    " Insert after 
+    noremap r a
+    " Replace
+    noremap l r
+    " Prev word
+    noremap m b
+    " Go right
+    noremap s l
+    noremap a l
+    " Undo
+    noremap , u
+    " Delete line
+    noremap k e
+    " New line
+    noremap z o
+    " New line
+    noremap z o
+
+let NERDTreeMapOpenInTab='-'
+let NERDTreeMapUpdir=''
+let NERDTreeMapOpenExpl=''
+let NERDTreeMapOpenInTabSilent=''
 "NERDTree
     let NERDTreeQuitOnOpen=1
 
