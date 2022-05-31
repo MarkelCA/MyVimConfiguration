@@ -1,14 +1,45 @@
-set foldlevel
-set foldmethod=syntax
-noremap <S-D> <S-j>
-noremap <S-n> <S-k>
-noremap de dd
-noremap t k
-noremap h j
-noremap d h
-noremap n l
-let NERDTreeMapOpenInTab='\r'
+"nnoremap <silent> T :call <SID>show_documentation()<CR>
+" Use K to show documentation in preview window.
+"nnoremap <silent> T :call <SID>show_documentation()<CR>
 
+" Tab movement
+nnoremap <S-Right> :tabnext<CR>
+nnoremap <S-Left> :tabprevious<CR>
+nnoremap <S-l> :tabnext<CR>
+nnoremap <S-h> :tabprevious<CR>
+" Movement
+noremap  H 10j
+noremap  T 10k
+noremap  U 10j
+noremap  E 10k
+" Insert after 
+noremap r a
+" Replace
+noremap l r
+" Go down
+noremap h j
+" Go down
+noremap h j
+noremap u j
+" Go up
+noremap t k
+noremap e k
+" Go left
+noremap n h
+noremap o h
+    " Prev word
+    noremap m b
+" Go right
+noremap s l
+noremap a l
+" Undo
+noremap , u
+" Delete line
+noremap k e
+" New line
+noremap z o
+
+let NERDTreeMapOpenInTab='\r'
 "ENV VARIABLE 
     let $INIT = '~/.config/nvim/init.vim'
 
@@ -73,16 +104,14 @@ let NERDTreeMapOpenInTab='\r'
 
 " Atajos
     let mapleader=" "
-	let g:user_emmet_leader_key=',' "emmet key
+    let g:user_emmet_leader_key='?' "emmet key
+    " Open new tab
+    nmap <Leader>rc :tabnew<CR>
 	nmap <Leader>s <Plug>(easymotion-s2)
 	nmap <Leader>nt :NERDTreeFind<CR>	
 	nmap <Leader>w : w<CR>
     nmap <Leader>q : q<CR>
-    noremap  J 10j
-    noremap  K 10k
 
-    " Open new tab
-    nmap <Leader>rc :tabnew<CR>
     " Open File Search
 	nmap <Leader>f :Files<CR>
     " Align top
@@ -113,11 +142,6 @@ let NERDTreeMapOpenInTab='\r'
     " Escape from terminal with <Esc>
     "tnoremap <Esc> <C-\><C-n>
 
-    " Tab movement
-    nnoremap <S-Right> :tabnext<CR>
-    nnoremap <S-Left> :tabprevious<CR>
-    nnoremap <S-l> :tabnext<CR>
-    nnoremap <S-h> :tabprevious<CR>
 
     " Fix error sugestions
     nnoremap  <S-f> :CocFix<CR>
@@ -277,10 +301,6 @@ let NERDTreeMapOpenInTab='\r'
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
-    nnoremap <silent> T :call <SID>show_documentation()<CR>
-
-    " Use K to show documentation in preview window.
-    nnoremap <silent> T :call <SID>show_documentation()<CR>
 
     function! s:show_documentation()
       if (index(['vim','help'], &filetype) >= 0)
