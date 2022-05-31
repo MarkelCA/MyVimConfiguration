@@ -1,3 +1,8 @@
+set foldlevel
+
+set foldmethod=syntax
+
+
 "ENV VARIABLE 
     let $INIT = '~/.config/nvim/init.vim'
 
@@ -118,10 +123,10 @@
         let extension = expand('%:e')
         if extension == 'c'
            :execute ":! gcc % && ./a.out" 
-
+        elseif extension == 'php'
+           :execute ":! php %" 
         elseif extension == 'cpp'
            :execute ":! g++ % && ./a.out" 
-
         elseif extension == 'py'
            :execute ":! python3 %" 
 
