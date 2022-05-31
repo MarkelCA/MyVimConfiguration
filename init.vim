@@ -1,7 +1,13 @@
 set foldlevel
-
 set foldmethod=syntax
-
+noremap <S-D> <S-j>
+noremap <S-n> <S-k>
+noremap de dd
+noremap t k
+noremap h j
+noremap d h
+noremap n l
+let NERDTreeMapOpenInTab='\r'
 
 "ENV VARIABLE 
     let $INIT = '~/.config/nvim/init.vim'
@@ -76,7 +82,7 @@ set foldmethod=syntax
     noremap  K 10k
 
     " Open new tab
-    nmap nt :tabnew<CR>
+    nmap <Leader>rc :tabnew<CR>
     " Open File Search
 	nmap <Leader>f :Files<CR>
     " Align top
