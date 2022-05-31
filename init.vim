@@ -80,7 +80,7 @@
     noremap e k
     " Go left
     noremap n h
-    noremap o h
+    noremap ; n
 
     " Insert after 
     noremap r a
@@ -96,9 +96,9 @@
     " Delete line
     noremap k e
     " New line
-    noremap z o
+    noremap j o
     " New line
-    noremap z o
+    noremap j o
 
 let NERDTreeMapOpenInTab='-'
 let NERDTreeMapUpdir=''
