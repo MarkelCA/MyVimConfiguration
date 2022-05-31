@@ -108,6 +108,11 @@ let NERDTreeMapOpenInTabSilent=''
     let NERDTreeQuitOnOpen=1
 
 " Atajos
+    "" Start interactive EasyAlign in visual mode (e.g. vipga)
+    xmap ga <Plug>(EasyAlign)
+
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    nmap ga <Plug>(EasyAlign)
     let mapleader=" "
     let g:user_emmet_leader_key='?' "emmet key
     " Open new tab
@@ -214,6 +219,7 @@ let NERDTreeMapOpenInTabSilent=''
         Plug 'jparise/vim-graphql'
 
         " Search files
+        Plug 'junegunn/vim-easy-align'
         Plug 'junegunn/fzf.vim'
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
