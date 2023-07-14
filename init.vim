@@ -22,13 +22,14 @@
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab "sets YAML indent to 2 spaces
 
 " GIT BLAMER
-    "\   'coc-ccls', "C compiler
     let g:coc_global_extensions = [
     \   'coc-json',
     \   'coc-git',
+    \   'coc-solidity',
     \   'coc-vimlsp', 
     \   'coc-clangd', 
     \   'coc-css', 
+    \   'coc-rust-analyzer', 
     \   'coc-phpls', 
     \   'coc-tsserver',
     \   'coc-solargraph',
@@ -169,6 +170,8 @@ let NERDTreeMapOpenInTabSilent=''
            :execute ":! g++ % && ./a.out" 
         elseif extension == 'py'
            :execute ":! python3 %" 
+        elseif extension == 'go'
+           :execute ":! go run  %" 
 
         elseif extension == 'js'
            :execute ":! node %" 
@@ -177,6 +180,8 @@ let NERDTreeMapOpenInTabSilent=''
            :execute ":! runhaskell %" 
         elseif extension == 'rb'
            :execute ":! ruby %" 
+        elseif extension == 'rs'
+           :execute ":! cargo run %" 
         else
             echomsg "Run(): Error - Application not found for this language."
         endif
@@ -191,6 +196,8 @@ let NERDTreeMapOpenInTabSilent=''
            :execute ":! gcc %" 
         elseif extension == 'cpp'
            :execute ":! g++ %" 
+        elseif extension == 'sol'
+           :execute ":! solc %" 
         else
             echomsg "Compile(): Error - Compiler not found for this language."
        endif
@@ -201,6 +208,7 @@ let NERDTreeMapOpenInTabSilent=''
         " Themes
         Plug 'morhetz/gruvbox'
         Plug 'sonph/onehalf', { 'rtp': 'vim' }
+        Plug 'tomlion/vim-solidity'
         "Plug 'itchyny/lightline.vim' "Barra inferior tuneada
         Plug 'yuezk/vim-js'
         Plug 'maxmellon/vim-jsx-pretty'
