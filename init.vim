@@ -1,27 +1,24 @@
-"ENV VARIABLE 
+""ENV VARIABLE 
     let $INIT = '~/.config/nvim/init.vim'
 
-"EDITOR
+""EDITOR
     set nu
-    set rnu
     set mouse=a "Habilita el ratón para desplazarse
     set clipboard=unnamed "Habilita el portapapeles del sistema 
-    nnoremap # *N
-    nnoremap * *N
-    let g:airline_powerline_fonts = 1
-    let g:airline_theme='deus'
+    " Highlight word with * (without jumping or scrolling)
+    nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
 
-"File and format
-    set nobackup 
-    set noundofile 
-    set encoding=utf-8 
-    set showmatch "para mostrar el parentess que cierra cuando me situo encima de uno
+
+    "let g:airline_powerline_fonts = 1
+    "let g:airline_theme='deus'
+
+""Tabulations
     set tabstop=4
     set shiftwidth=4
     set expandtab
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab "sets YAML indent to 2 spaces
 
-" GIT BLAMER
+"" COC syntax highlighter
     let g:coc_global_extensions = [
     \   'coc-json',
     \   'coc-git',
@@ -35,13 +32,15 @@
     \   'coc-solargraph',
     \]
 
+" GIT BLAMER
     let g:blamer_enabled = 1
-    let g:blamer_delay = 0
+    "let g:blamer_delay = 0
     let g:blamer_template = '<author>: <committer-time> - <summary>'
     let g:blamer_relative_time = 1
     let g:blamer_show_in_visual_modes = 0
 
-"COC GIT
+""COC GIT
+    " navigate changes of current buffer
     nmap [g <Plug>(coc-git-prevchunk)
     nmap ]g <Plug>(coc-git-nextchunk)
     " navigate conflicts of current buffer
@@ -49,24 +48,15 @@
     nmap ]c <Plug>(coc-git-nextconflict)
     " show chunk diff at current position
     nmap gs <Plug>(coc-git-chunkinfo)
-    " show commit contains current position
-    nmap gc <Plug>(coc-git-commit)
-    " create text object for git chunks
-    omap ig <Plug>(coc-git-chunk-inner)
-    xmap ig <Plug>(coc-git-chunk-inner)
-    omap ag <Plug>(coc-git-chunk-outer)
-    xmap ag <Plug>(coc-git-chunk-outer)
 
 
-" DVORAK Key remap
-    " Documentation
+"" DVORAK Key remap
+    "" Documentation
     nnoremap <silent> D :call <SID>show_documentation()<CR>
 
-    " Tab movement
-    nnoremap <S-Right> :tabnext<CR>
-    nnoremap <S-Left> :tabprevious<CR>
-    nnoremap <S-n> :tabnext<CR>
-    nnoremap <S-s> :tabprevious<CR>
+    "" Tab movement
+    nnoremap <S-s> :tabnext<CR>
+    nnoremap <S-n> :tabprevious<CR>
 
     " Main Movement
     noremap  H 10j
@@ -82,82 +72,82 @@
     " Go left
     noremap n h
     noremap ; n
-
+    noremap j b
+    noremap q w
+    " Go right
+    noremap s l
+    noremap a l
+    noremap q w
+    " Undo
+    noremap , u
     " Insert after 
     noremap r a
     " Replace
     noremap l r
     " Prev word
     noremap m b
-    " Go right
-    noremap s l
-    noremap a l
-    " Undo
-    noremap , u
     " Delete line
     noremap k e
     " New line
-    noremap j o
+    noremap o h
     " New line
     noremap j o
 
-let NERDTreeMapOpenInTab='-'
-let NERDTreeMapUpdir=''
-let NERDTreeMapOpenExpl=''
-let NERDTreeMapOpenInTabSilent=''
-"NERDTree
+""NERDTree
+    let NERDTreeMapOpenInTab='-'
+    let NERDTreeMapUpdir=''
+    let NERDTreeMapOpenExpl=''
+    let NERDTreeMapOpenInTabSilent=''
     let NERDTreeQuitOnOpen=1
 
-" Atajos
-    "" Start interactive EasyAlign in visual mode (e.g. vipga)
+"" Atajos
+
+    " EASY ALIGNER
+    """ Start interactive EasyAlign in visual mode (e.g. vipga)
     xmap ga <Plug>(EasyAlign)
-
-    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-    nmap ga <Plug>(EasyAlign)
+    "
     let mapleader=" "
-    let g:user_emmet_leader_key='?' "emmet key
-    " Open new tab
+    "let g:user_emmet_leader_key='?' "emmet key
+    "" Open new tab
     nmap <Leader>rc :tabnew<CR>
-	nmap <Leader>s <Plug>(easymotion-s2)
-	nmap <Leader>nt :NERDTreeFind<CR>	
-	nmap <Leader>w : w<CR>
-    nmap <Leader>q : q<CR>
+    nmap <Leader>s <Plug>(easymotion-s2)
+    nmap <Leader>nt :NERDTreeFind<CR>	
+    nmap <Leader>w  :w<CR>
+    nmap <Leader>q  :q<CR>
+    nmap <Leader>h  :noh<CR>
 
-    " Open File Search
-	nmap <Leader>f :Files<CR>
-    " Align top
-	nmap <Leader>t zt
-    " Align bottom
-	nmap <Leader>b zb
-    " Align mid
-	nmap <Leader>m zz
+    "" Open File Search
+    nmap <Leader>f :Files<CR>
+    "" Align top
+	"nmap <Leader>t zt
+    "" Align bottom
+	"nmap <Leader>b zb
+    "" Align mid
+    nmap <Leader>m zz
 
-    "Open terminal command
+    ""Open terminal command
     nmap C :!  
 
-    " Drupal maps
-    nmap cr :! drush cr<CR>
-
-    "Blamer Toggle
+    ""Blamer Toggle
     nmap <Leader>bt :BlamerToggle<CR>
 
-    " Maps double i to escape
-    ":imap ii <Esc>
+    "" Maps double i to escape
+    "imap ii <Esc>
 
-    " Copy to system clipboard
+    "" Copy to system clipboard
     noremap <S-y> "+y
 
-    " Remove endline
-    noremap <C-j><C-j> :,+j<CR>
+    "" Remove endline
+    "noremap <C-j><C-j> :,+j<CR>
 
-    " Escape from terminal with <Esc>
-    "tnoremap <Esc> <C-\><C-n>
+    "" Escape from terminal with <Esc>
+    tnoremap <Esc> <C-\><C-n>
 
 
-    " Fix error sugestions
+    "" Fix error sugestions
     nnoremap  <S-f> :CocFix<CR>
 
-    " Run any language
+    "" Run any language
     nnoremap RR :call Run()<CR>
 
     function Run()
@@ -203,40 +193,40 @@ let NERDTreeMapOpenInTabSilent=''
        endif
     endfunction
 
-" PLUGINS VIM-PLUG
+"" PLUGINS VIM-PLUG
     call plug#begin('~/.vim/plugged')
-        " Themes
+        "" Themes
         Plug 'morhetz/gruvbox'
         Plug 'sonph/onehalf', { 'rtp': 'vim' }
-        Plug 'tomlion/vim-solidity'
-        "Plug 'itchyny/lightline.vim' "Barra inferior tuneada
-        Plug 'yuezk/vim-js'
+        "Plug 'tomlion/vim-solidity'
+        ""Plug 'itchyny/lightline.vim' "Barra inferior tuneada
+        "Plug 'yuezk/vim-js'
         Plug 'maxmellon/vim-jsx-pretty'
-        " Barra inferior
+        "" Barra inferior
         Plug 'APZelos/blamer.nvim'
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
+        "Plug 'vim-airline/vim-airline'
+        "Plug 'vim-airline/vim-airline-themes'
 
-        " IDE
+        "" IDE
         Plug 'easymotion/vim-easymotion'
         Plug 'scrooloose/nerdtree'
-        Plug 'christoomey/vim-tmux-navigator'
-        " Use release branch (recommend)
+        "Plug 'christoomey/vim-tmux-navigator'
+        "" Use release branch (recommend)
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'mg979/vim-visual-multi', {'branch': 'master'} "Multiple cursors
-        Plug 'jparise/vim-graphql'
+        "Plug 'jparise/vim-graphql'
 
-        " Search files
+        "" Search files
         Plug 'junegunn/vim-easy-align'
         Plug 'junegunn/fzf.vim'
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-        " Atajos
-        Plug 'mattn/emmet-vim'
+        "" Atajos
+        "Plug 'mattn/emmet-vim'
         Plug 'preservim/nerdcommenter'
         
-        " Git
-        Plug 'tpope/vim-fugitive'
+        "" Git
+        "Plug 'tpope/vim-fugitive'
     call plug#end()
 
 "VUNDLE PLUGINS
@@ -261,14 +251,14 @@ let NERDTreeMapOpenInTabSilent=''
 
 "ESTILOS
     set guifont=DejaVu\ Sans\ Mono
-	syntax enable "Subrayado de sintaxis
-	set numberwidth=1
-	set showcmd "muestra los comando que estoy ejecutando
-	set ruler "mostrar numero de linea (por defecto en nvim)
-	set laststatus=2 "muestra la barra (no esta por defecto en vim)
-	syntax on
-	"let g:rainbow_active = 1 "Enable rainbow brackets
-	set cursorline
+    syntax enable "Subrayado de sintaxis
+    set numberwidth=1
+    set showcmd "muestra los comando que estoy ejecutando
+    set ruler "mostrar numero de linea (por defecto en nvim)
+    set laststatus=2 "muestra la barra (no esta por defecto en vim)
+    syntax on
+    "let g:rainbow_active = 1 "Enable rainbow brackets
+    set cursorline
     " Onehalfdark with a fix for the dialogs
     colorscheme onehalfdark | hi Pmenu ctermfg=78 guibg=236 ctermbg=237
 
@@ -332,9 +322,6 @@ let NERDTreeMapOpenInTabSilent=''
     endfunction
     autocmd CursorHold * silent call CocActionAsync('highlight')
     " Symbol renaming.
-    nmap <leader>rn <Plug>(coc-rename)
+    "nmap <leader>rn <Plug>(coc-rename)
 
-    " Formatting selected code.
-    "xmap <leader>f  <Plug>(coc-format-selected)
-    "nmap <leader>f  <Plug>(coc-format-selected)
 
